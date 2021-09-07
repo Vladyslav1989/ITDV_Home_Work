@@ -343,6 +343,274 @@ namespace ITDV_Home_Work
            */
             Console.WriteLine("----------");
 
+            Console.WriteLine("Please Enter LocalVarible");
+            int LocalVarible = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"LocalVarible is {LocalVarible}");
+            {
+                LocalVarible = 10;
+                Console.WriteLine(LocalVarible);
+            }
+            {
+                LocalVarible = 15;
+                Console.WriteLine(LocalVarible);
+            }
+
+            /* 
+              Lesson # 20             
+              * Блок  ?
+              * Область видимости переменной  ?
+              * Структурный подход  ?
+              * Structured Programming ?
+              * Время жизни переменной?
+              * Окно уязвимости?
+              * Принцип близости ?                      
+
+          */
+
+            Console.WriteLine("----------");
+            {
+                int sum;
+                {
+                    int a = 10,  b = 20, c = 30;
+                    sum = a + b + c;
+                }
+                int dif;
+                {
+                    int o = 50, p = 100, q = 250;
+                    dif = q - p - o;
+                    
+                }
+                double Total = dif/sum  ;
+
+                Console.WriteLine($"Total is {Total}");
+            }
+
+           /* 
+              Lesson # 21             
+              * checked  ?
+              * unchecked ?                          
+
+          */
+            unchecked // uncheked by defult if we selct checked we will get an error of overfloww 
+
+            {
+                int aa = int.MaxValue;
+                int bb = aa + 1;
+                Console.WriteLine(aa);
+                Console.WriteLine(bb);
+            }
+
+            /* 
+              Lesson # 22             
+              * Величина  ?
+              * Константа ?                          
+
+          */
+            Console.WriteLine("----------");
+            Console.WriteLine("Plese Eneter a Double ");
+            double UserEnter = Convert.ToDouble(Console.ReadLine());
+            const double PI = 3.141593;
+            const bool My_CONST = true;
+
+            bool  iSConstBigger = PI == UserEnter;
+
+            Console.WriteLine($"iSConstBigger ? {iSConstBigger == My_CONST }");
+
+            /* 
+              Lesson # 23             
+              * Алгоритм  ?
+              * линейные алгоритмы ? 
+              * алгоритмами ветвления?
+              * Ветвление?
+              * if?
+              * else if?
+              * ветвлением в полной форме.?
+              * Явное сравнение?
+              * Неявное сравнение?
+
+          */
+
+            Console.WriteLine("----------");
+            Console.WriteLine("Plese Eneter a Number ");
+
+            int userInputs = Convert.ToInt32(Console.ReadLine());
+
+            if (userInputs >= 3)
+            {
+                userInputs += 10;
+            }
+            else {
+                userInputs *= 10;
+            }
+            Console.WriteLine(userInputs);
+
+
+            /* 
+             Lesson # 24             
+             * Гибкость  ?
+             * Сложность кода ? 
+             * Цикломатическая сложность?
+            
+
+         */
+
+            /* 
+            Lesson # 25             
+            * Ctrl + K + D  ?
+            * true ? 
+            * false ?
+            * Пустой оператор?
+
+
+        */
+
+            Console.WriteLine("-------------");
+            Console.WriteLine("Please Enter first side ");
+            int firstSide = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter seconde side ");
+            int secondeSide = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter P fro Perimiter or A for Area");
+            string PerimetOrArea = Console.ReadLine();
+            double Area = firstSide * secondeSide;
+            double Perimeter = firstSide * secondeSide / 2;
+
+            if (PerimetOrArea == "P") 
+            {
+                Console.WriteLine($"Perimet is: {Perimeter}");
+            }
+            if (PerimetOrArea == "A")
+            {
+                Console.WriteLine($"Are is : {Area}");
+            }
+            if(PerimetOrArea != "A" && PerimetOrArea != "P" ) {
+                Console.WriteLine("Wrong Input ");
+            }
+
+
+       /* 
+           Lesson # 26            
+           * switch-case ?
+           * выражение-селектор? 
+           * постоянным выражением. ?
+           * Оператор break ?
+
+
+       */
+
+
+            Console.WriteLine("-------------");
+            Console.WriteLine("Please Enter first number ");
+            int numOne = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter seconde number ");
+            int numTwo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please select operation  +, -, /, *");
+            string operation = Console.ReadLine();
+            double summ, diff, mul, div;
+            switch (operation) 
+            {
+                case ("+"):
+                    {
+                        summ = numOne + numTwo;
+                        Console.WriteLine(summ);
+                        break;
+                    }
+                case ("-"):
+                    {
+                        diff = numOne - numTwo;
+                        Console.WriteLine(diff);
+                        break;
+                    }
+                case ("*"):
+                    {
+                        mul = numOne * numTwo;
+                        Console.WriteLine(mul);
+                        break;
+                    }
+                case ("/"):
+                    {
+                        div = numOne / numTwo;
+                        Console.WriteLine(div);
+                        break;
+                    }
+                default:
+                    {
+                      
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Wrong Operator");
+                        break;
+                    }
+            }
+
+
+            /* 
+              Lesson # 27            
+              * Тернарный оператор [ ? : ] ?
+              * Стэк?   
+            */
+            Console.WriteLine("-------------");
+            Console.WriteLine("Please Enter first number ");
+            int numX = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter seconde number ");
+            int numY = Convert.ToInt32(Console.ReadLine());
+
+            numX = numX % 2 == 0 ? numX : numX + 1;
+            numY = numY % 2 == 0 ? numY : numY + 1;
+
+            Console.WriteLine($"numX: {numX} and numY: {numY}");
+
+            string result = (numX + numY) % 2 == 0 ? $"Total of {numX} and {numY} can be divided on 4 " : $"Total of {numX} and {numY} can not  be divided on 4";
+            Console.WriteLine(result);
+
+
+            /* 
+              Lesson # 28            
+              * Цикл ?
+              * Итерация? 
+              * while ?
+              * do-while ?
+            */
+
+
+            Console.WriteLine("-------------");
+            Console.WriteLine("Please Enter a Number");
+            int numberA = Convert.ToInt32(Console.ReadLine());
+
+            while (numberA >= 0)
+            {
+                Console.WriteLine(numberA);
+                numberA --;
+            }
+
+            Console.WriteLine("Please Enter a 1st Number");
+            int numberB = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please Enter a 2nd Number");
+            int numberC = Convert.ToInt32(Console.ReadLine());
+
+            while (numberC >= 0)
+            {
+                if (numberB == numberC)
+                {
+                    break;
+                }
+                if (numberC % 3 == 0)
+                {
+                    Console.WriteLine(numberC);
+                }
+                numberC--;
+                numberB++;
+                
+            }
+
+
+            /* 
+              Lesson # 29            
+              * break, ?
+              * continue? 
+              * Array ?
+              * Index ?
+              * empty Array?
+            */
+
             Console.ReadLine();
         }
     }

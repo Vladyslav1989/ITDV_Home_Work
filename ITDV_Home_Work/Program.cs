@@ -610,6 +610,172 @@ namespace ITDV_Home_Work
               * Index ?
               * empty Array?
             */
+            Console.WriteLine("-------------");
+
+            string[] months = { "Jan", "Feb","Mar","Apr","May","Jun" };
+            
+
+            int index = 0;
+            while (months.Length > index)
+            {
+
+                Console.WriteLine("Plese Enter name of the month");
+                string answer = Console.ReadLine();
+
+                if (answer == months[index])
+                {
+                    Console.WriteLine(months[index]);
+                    index++;
+                }
+                if (index == 4 && Console.ReadLine() != months[4]) 
+                {
+                    Console.WriteLine("Wrong Answer");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Try on emore time ");
+                    continue;
+                }
+                
+            }
+
+
+            /* 
+             Lesson # 30            
+             * CopyTo(array, Int32) ?
+             * Array.Resize(ref array, Int32)? 
+             * Алгоритм сортировки?
+             * Quicksort ?
+             * Реверсирование массива?
+           */
+
+            Console.WriteLine("-------------");
+
+            Console.WriteLine("PLease Enter a length of array  ");
+            int length = Convert.ToInt32(Console.ReadLine());
+            int [] array = new int [length];
+
+            int indexA = 0;
+            while (array.Length >  indexA) 
+            {
+                Console.WriteLine("Plese eneter numbers you want to add to array ");
+                array[indexA] = Convert.ToInt32(Console.ReadLine());
+                indexA++;
+            }
+
+            Array.Resize(ref array, array.Length + 1);
+            Console.WriteLine("Plese eneter new number you want to add to an array ");
+            int newElemnt = Convert.ToInt32(Console.ReadLine());
+            array[array.Length - 1] = newElemnt;
+            Array.Reverse(array);
+
+
+            int newIndx = 0;
+            while (array.Length > newIndx)
+            {
+                Console.WriteLine(array[newIndx]);
+                newIndx++;
+            }
+
+
+            /* 
+            Lesson # 31            
+            * Цикл for, ?
+            * Array.Resize(ref array, Int32)? 
+            * Алгоритм сортировки?
+            * Quicksort ?
+            * Реверсирование массива?
+          */
+
+            for (int i = 0; 100 > i; i++)
+            {
+                Console.WriteLine(i);
+            }
+
+            /* 
+           Lesson # 32             
+           * Двумерный массив?
+           * GetLength? 
+           * матрица?
+           
+         */
+
+            Console.WriteLine("-------------");
+
+            Console.WriteLine("PLease Enter a Row of array  ");
+            int arrayRow = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("PLease Enter a Column of array  ");
+            int arrayColumn = Convert.ToInt32(Console.ReadLine());
+            int[,] firstArray2d = new int [arrayRow, arrayColumn];
+
+            Console.WriteLine("PLease Enter a Row of 2nd array  ");
+            int arrayRow2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("PLease Enter a Column of 2nd array  ");
+            int arrayColumn2 = Convert.ToInt32(Console.ReadLine());
+            int[,] secondArray2d = new int[arrayRow2, arrayColumn2];
+
+            for (int i = 0; i < firstArray2d.GetLength(0); i++)
+            {
+                for (int j = 0; j < firstArray2d.GetLength(1); j++)
+                {
+                    Console.WriteLine("PLease Enter number for Array ");
+                    int numberArray1 = Convert.ToInt32(Console.ReadLine());                   
+                    firstArray2d[i, j] = numberArray1; 
+                    
+                }
+               
+            }
+
+
+            {
+                for (int i = 0; i < secondArray2d.GetLength(0); i++)
+                {
+                    for (int j = 0; j < secondArray2d.GetLength(1); j++)
+                    {
+                        Console.WriteLine("PLease Enter number for Array ");
+                        int numberArray2 = Convert.ToInt32(Console.ReadLine());
+                        secondArray2d[i, j] = numberArray2;
+
+                    }
+
+                }
+            }
+            Console.WriteLine("-------1st Aray-----");
+            {
+                for (int i = 0; i < firstArray2d.GetLength(0); i++)
+                {
+                    for (int j = 0; j < firstArray2d.GetLength(1); j++)
+                    {
+                       
+                        Console.Write(firstArray2d[i, j]);
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+            Console.WriteLine("-------2nd Aray-----");
+            {
+                for (int i = 0; i < secondArray2d.GetLength(0); i++)
+                {
+                    for (int j = 0; j < secondArray2d.GetLength(1); j++)
+                    {
+
+                        Console.Write(secondArray2d[i, j]);
+                    }
+                    Console.WriteLine();
+                }
+
+            }
+
+
+            /* 
+         Lesson # 33             
+         * Трехмерный массив?
+         * набор двумерных таблиц.? 
+         
+
+       */
 
             Console.ReadLine();
         }

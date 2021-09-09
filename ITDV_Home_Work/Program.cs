@@ -770,13 +770,110 @@ namespace ITDV_Home_Work
 
 
             /* 
-         Lesson # 33             
+         Lesson # 33-34             
          * Трехмерный массив?
          * набор двумерных таблиц.? 
+         * Четырехмерный массив
+         
+
+       */
+            Console.WriteLine("-------------");
+
+            int bookcases = 5;
+            int shelves = 10;
+            int books = 10;
+            int rooms = 3;
+
+            string[,,,] library = new string[rooms, bookcases, shelves, books];
+
+            library[2, 3, 3, 9] = "О дивный новый мир";
+            library[2, 4, 6, 2] = "Приключения Тома Сойера";
+            library[1, 2, 3, 1] = "CLR via C#";
+
+            Console.WriteLine("Какую книгу вы ищете? : ");
+            string bookName = Console.ReadLine();
+
+            for (int r = 0; r < rooms; r++)
+            {
+                for (int i = 0; i < bookcases; i++)
+                {
+                    for (int j = 0; j < shelves; j++)
+                    {
+                        for (int k = 0; k < books; k++)
+                        {
+                            if (library[r, i, j, k] == bookName)
+                            {
+                                Console.WriteLine("Она находится в");
+                                Console.WriteLine($"комнате: {r}");
+                                Console.WriteLine($"на стеллаже: {i}");
+                                Console.WriteLine($"полке: {j}");
+                                Console.WriteLine($"по счёту: {k}");
+                                Console.WriteLine();
+                            }
+                        }
+                    }
+                }
+            }
+
+            /* 
+         Lesson # 35            
+         * Имя массива,?
+         * Зубчатые или ступенчатые массивы,? 
+         * Двумерный и трехмерный зубчатый массив?
+         * Split()?
+         * Trim()?
          
 
        */
 
+            Console.WriteLine("-------------");
+
+            string[] surnamesArray;
+            {
+                Console.WriteLine("Введите фамилии сотрудников через запятую:");
+                string surnames = Console.ReadLine();
+                surnamesArray = surnames.Split(' ');
+
+                for (int i = 0; i < surnamesArray.Length; i++)
+                    surnamesArray[i] = surnamesArray[i].Trim();
+            }
+            string[][] jaggedArray;
+            {
+                jaggedArray = new string[surnamesArray.Length][];
+
+                for (int i = 0; i < surnamesArray.Length; i++)
+                {
+                    
+                    jaggedArray[i] = new string[surnamesArray.Length];
+
+                    for (int j = 0; j < surnamesArray.Length; j++)
+                    {
+                        string sum = surnamesArray[j];
+                        jaggedArray[i][j] = sum;
+                    }
+                }
+            }
+
+
+
+            for (int i = 0; i < surnamesArray.Length; i++)
+            {
+                Console.WriteLine(surnamesArray[i]);
+            }
+
+            Console.WriteLine("-----------");
+
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                   
+                    Console.Write($"{jaggedArray[i][j]} ");
+                }
+                Console.WriteLine();
+            }
+
+           
             Console.ReadLine();
         }
     }
